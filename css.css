@@ -1,0 +1,1509 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+:root{
+    --text-color: #f5f5f5;
+    --hover-color:#12f7ff;
+    --bg-color:#250821;
+    --secon-bg-color:#292e33;
+    --big-font:2.5rem;
+    --normal-font:2rem;
+    --neon-box-shadow:0 0 .5rem #12f7ff;
+    --h2-font:3rem;
+    --font-neon-text-shadow: 0 0 10px rgba(18,247,255,0.3),
+    0 0 20px rgba(18, 247, 255, 0.3),
+    0 0 30px rgba(18, 247, 255, 0.3),
+    0 0 40px rgba(18, 247, 255, 0.3),
+    0 0 70px rgba(18, 247, 255, 0.3),
+    0 0 80px rgba(18, 247, 255, 0.3),
+    0 0 100px rgba(18, 247, 255, 0.3),
+    0 0 150px rgba(18, 247, 255, 0.3);
+}
+body{
+    font-family: "Poppins",sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    border-bottom: 1-px solid transparent;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    padding: 20px 10%;
+}
+
+header.sticky {
+    background:var(--bg-color);
+    border-bottom: 1px solid var(--secon-bg-color);
+    padding: 12px 10%;
+}
+.logo{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+span{
+    color: var(--hover-color);
+}
+.navlist{
+    display:flex;
+}
+.navlist a{
+    color:var(--text-color);
+    font: weight 500px;
+    padding:10px 20px;
+}
+.navlist a:hover{
+    color: var(--hover-color);
+    text-shadow: 0 0 10px rgba(18,247,255,0.6),
+    0 0 20px rgba(18, 247, 255, 0.6),
+    0 0 30px rgba(18, 247, 255, 0.6),
+    0 0 40px rgba(18, 247, 255, 0.6),
+    0 0 70px rgba(18, 247, 255, 0.6),
+    0 0 80px rgba(18, 247, 255, 0.6),
+    0 0 100px rgba(18, 247, 255, 0.6),
+    0 0 150px rgba(18, 247, 255, 0.6);
+}
+
+.navlist a.active {
+    color:var(--hover-color);
+}
+#menu-icon{
+    font-size:1.8rem;
+    z-index:10001;
+    cursor:pointer;
+    margin-left:25px;
+    background:var(--hover-color);
+    border-radius:3px;
+    color:var(--secon-bg-color);
+    display:none;
+}
+
+section{
+    padding: 100px 10%;
+}
+.home{
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    grid-gap: 4em;
+}
+.home-content{
+    max-width: 600px;
+    margin-bottom:-1.8rem;
+}
+
+/* Apply Montserrat to all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Apply Roboto to body text */
+body, p, a, li, span {
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-content h1{
+    font-size: var(--big-font);
+    font-weight: 700;
+   
+}
+.change-text{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.change-text h3{
+    display: inline-flex;
+    margin:0;
+    vertical-align: top;
+}
+.change-text h3 .word{
+    position: absolute;
+    display: flex;
+    opacity:0;
+}
+.change-text h3 .word .letter{
+    transform-origin: center center 25px;
+}
+.change-text h3 .word .letter.out{
+    transform:rotateX(90deg);
+    transition: 0.32s cubic-bezier(0.6,0,0.7,0.2);
+}
+.change-text h3 .word .letter.in{
+    transition: 0.38s ease;
+}
+.change-text h3 .word .letter.behind{
+    transform: rotateX(-90deg);
+}
+.home-content p{
+    color: #bdbdbd;
+    line-height: 1.7;
+}
+.btn-box{
+    display:flex;
+    justify-content: space-between;
+    width: 320px;
+    height: 45px;
+}
+.btn-box a.btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    letter-spacing:1px;
+    font-weight:600;
+    transition: .6s;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 9px;
+    margin: 2.7rem 0rem;
+    position: relative;overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--hover-color);
+}
+
+a.btn:hover{
+    color:var(--hover-color);
+}
+
+a.btn::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    background: var(--bg-color);
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    transition: .4s;
+}
+a.btn:hover::before{
+    width: 100%;
+}
+a.btn:nth-child(2){
+    background: var(--bg-color);
+    color: var(--hover-color);
+}
+a.btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+a.btn:nth-child(2)::before{
+    background: var(--hover-color);
+}
+.social-icons{
+    margin-top: 7.8rem;
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height: 40px;
+}
+.social-icons a{
+    display: inline-flex;
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    color: var(--hover-color);
+    border: 2px solid var(--hover-color);
+    transition: .6s;
+    box-shadow: 0 0 0.3rem #12f7ff;
+    border-radius: 5px;
+    position: relative;
+    margin: -1rem 0rem;
+    z-index: 1;
+    overflow: hidden;
+}
+.social-icons a i{
+    font-size: 1.5rem;
+}
+.social-icons a:hover{
+    color: var(--bg-color);
+}
+.social-icons a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height:100%;
+    background: var(--hover-color);
+    transition: .6s;
+    z-index: -1;
+}
+.social-icons a:hover::before{
+    width: 100%;
+}
+.home-image{
+    position: relative;
+   
+}
+.img-box{
+    text-align:center;
+  
+}
+.img-box img{
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    max-height: 1000px;
+    margin-top: -30px;
+    
+}
+.liquid-shape{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 10%;
+    margin-top: -30px;
+}
+
+.liquid-shape:nth-child(2){
+    filter: blur(45px)
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2em;
+    background:var(--secon-bg-color);
+    
+}
+.about .img-about{
+    text-align: center;
+    position: relative;
+    margin:2rem -4.5rem ;
+}
+.about .img-about img{
+    width: 400px;
+    height: auto;
+    margin:0rem 4.5rem;
+}
+.about-content{
+    margin:0rem 5rem 0rem 7rem;
+}
+.about .img-about img{
+    
+    border-radius: 50%;
+    border: 0.18rem solid var(--hover-color);
+    box-sizing: border-box;
+    
+}
+.img-about .circle-spin{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width:420px;
+    height:420px;
+    border-radius: 50%;
+    border-top: 0.18rem solid var(--hover-color);
+    border-bottom: 0.18rem solid var(--hover-color);
+    border-left: 0.18rem solid var(--secon-bg-color);
+    border-right: 0.18rem solid var(--secon-bg-color);
+    animation: aboutSpinner 8s linear infinite;
+    transform-origin: center;
+   
+}
+.about-content span{
+    color: #fdfdfd;
+    font-size: .8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.about-content h2{
+    color: var(--hover-color);
+    font-weight: 700;
+    font-size: var(--normal-font);
+}
+.about-content h3{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: .2rem;
+}
+.about-content p{
+    color: #fdfdfd;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.info-about1,
+.info-about2,
+.info-about3{
+    background: var(--bg-color);
+    font-size: .8rem;
+    position: absolute;
+    padding: 10px;
+    width: 90px;
+    height:90px;
+    border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    display: block;
+    box-shadow: var(--neon-box-shadow);
+    border: 1px solid var(--hover-color);
+    outline: 2px solid var(--bg-color);
+    z-index: 100;
+    animation: morph 6s linear infinite;
+}
+
+.info-about1{
+    left:6%;
+    top:36%;
+}
+.info-about2{
+    left:74%;
+    top:15%;
+}
+.info-about3{
+    left:61%;
+    top:80%;
+}
+.img-about span{
+    color: var(--hover-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Apply Montserrat to all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Apply Roboto to body text */
+body, p, .content {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 380;
+    line-height: 1.6;
+}
+
+/* Ensure the education section follows the same style */
+.education {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+.education  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+.education .education-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5rem;
+
+}
+
+.education h2{
+    font-size: 2.3rem;
+    padding-bottom: 2.5rem;
+
+}
+.education-row .education-column {
+   
+    flex: 1 1 45%;
+    max-width:45%;
+    box-sizing: border-box;
+}
+.education-column .title{
+    font-size: 1.7rem;
+    margin: 0 0 1rem 2.2rem;
+}
+.education-column .education-box{
+    border-left: .2rem solid var(--hover-color);
+}
+
+.education-box .education-content {
+    position: relative;
+    padding-left: 2rem;
+    
+}
+.education-box .education-content::before {
+    content:'';
+    position: absolute;
+    top:0;
+    left: -0.45rem;
+    width: 0.8rem;
+    height:0.8rem;
+    background: var(--hover-color);
+    border-radius: 50%;
+}
+
+.education-content .content{
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--hover-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.6rem #12f7ff;
+}
+
+.education-content .content::before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 100%;
+    background: var(--secon-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.education-content .content:hover::before {
+    width: 100%;
+}
+.education-content .content .year {
+    font-size: 1rem;
+    color: var(--hover-color);
+    padding-bottom: .5rem;
+}
+.education-content .content .year i {
+    padding-right: .5rem;
+}
+
+.education-content .content h3 {
+    font-size: 1.1rem;
+}
+.education-content .content p{
+    font-size:1rem;
+    padding-top: .5rem;
+}
+
+/* Apply Montserrat to section headings */
+.skills h2, .skills h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Apply Roboto to skill descriptions and percentage texts */
+.skills p, .skills .percentage {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* Make skill labels bold */
+.skills .info p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+/* Ensure professional skill labels use the same font */
+.skills .professional p1, .skills .professional p2, 
+.skills .professional p3, .skills .professional p4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+.skills{
+    background: var(--secon-bg-color);
+}
+
+.main-text {
+    font-size: 1rem;
+    margin-bottom: 3.5rem;
+    
+}
+.main-text p{
+    color: #fdfdfd;
+    font-size: 1rem;
+    font-weight: 270;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.main-text h2{
+    font-size:1.6rem;
+}
+.skill-main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 50px;
+}
+
+.skill-bar{
+    margin-bottom: 2.3rem;
+}
+
+.skill-main h3{
+    margin-bottom: 2rem;
+    font-size: var(--normal-font);
+    text-align: center;
+}
+
+.skill-left .skill-bar .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.skill-left .skill-bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.skill-bar .bar span{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: var(--hover-color);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shadow);
+}
+
+.skill-bar .bar .Programming{
+    width: 80%;
+    animation: Programming 2s;
+}
+
+.skill-bar .bar .Databases{
+    width: 73%;
+    animation: Databases 3s;
+}
+
+.skill-bar .bar .Machine{
+    width: 65%;
+    animation: Machine 4s;
+}
+
+.skill-bar .bar .Data{
+    width: 60%;
+    animation: Data 5s;
+}
+
+.skill-bar .bar .Statistical{
+    width: 70%;
+    animation: Statistical 6s;
+}
+
+.professional{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+}
+
+.box{
+    position: relative;
+    margin: 10px 0;
+    flex: 1 1 15rem;
+    
+
+}
+
+.box .text{
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.box .text big{
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box .text small{
+    display: block;
+    font-weight: 600;
+}
+
+
+.circle {
+    width:100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.circle .points{
+    width: 2px;
+    height: 10px;
+    background-color: var(--bg-color);
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+}
+
+.points.marked{
+    animation: glow 0.04s linear forwards;
+         animation-delay: calc(var(--i)*0.05s);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contact {
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--secon-bg-color);
+}
+
+.contact form {
+    max-width: 45rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+    
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    height: 80%;
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .7rem;
+    border: .2rem solid var(--hover-color);
+    outline: none;
+   
+    box-shadow: 0 0 0.5rem #12f7ff;
+   
+}
+
+.contact form .input-box .input-field input::placeholder
+.contact form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contact form .focus {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: calc(100% - 1rem);
+    color: var(--bg-color);
+    border-radius: .7rem;
+    z-index:-1;
+    transition: .5s;
+   
+}
+
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus {
+    width:100%;
+}
+
+.contact form .textarea-field .focus {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: .7rem;
+    z-index:-1;
+    transition: .5s;
+    padding: 0;
+}
+
+
+.textarea-field textarea:focus~.focus{
+    width:100%;
+}
+
+.contact form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea {
+    resize: none;
+}
+
+.contact .btn-box {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 20px; /* Add some padding around the button */
+    border: 2px solid #007BFF; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.contact .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:120px;
+    height: 45px;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    letter-spacing:1px;
+    font-weight:600;
+    transition: .6s;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 9px;
+    margin: 2.7rem 0rem;
+    position: relative;overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--hover-color);
+}
+.contact .btn:hover {
+    color:var(--hover-color); /* Darker button color on hover */
+}
+
+.contact .btn::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    background: var(--bg-color);
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    transition: .4s;
+}
+.contact .btn:hover::before{
+    width: 100%;
+}
+.contact .btn:nth-child(2){
+    background: var(--bg-color);
+    color: var(--hover-color);
+}
+.contact .btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+.contact .btn:nth-child(2)::before{
+    background: var(--hover-color);
+}
+.contact .btn {
+    margin: -3rem 0rem; /* This will move the button up */
+}
+
+.contact h2{
+    text-align: center;
+    padding-bottom: 5rem;
+    font-size: 2.3rem;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    margin-bottom:-2rem;
+    margin-top:-0.5rem;
+}
+
+.footer-text p{
+    font-size: 1rem;
+}
+
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:35px;
+    height: 35px;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    letter-spacing:1px;
+    font-weight:600;
+    transition: .6s;
+    box-shadow: var(--neon-box-shadow);
+    border-radius: 9px;
+   
+    position: relative;overflow: hidden;
+    z-index: 1;
+    border: 2px solid var(--hover-color);
+    padding: .8rem; 
+}
+
+.footer-iconTop a:hover {
+    color: var(--hover-color);
+}
+
+.footer-iconTop a::before {
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    background: var(--bg-color);
+    width:0;
+    height:100%;
+    z-index:-1;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover::before {
+    width:100%;
+}
+
+
+
+
+
+
+
+.professional {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between the circles */
+    justify-items: end; /* Align items to the right */
+}
+
+.skill-right h3 {
+    margin-right:-7.4rem;
+}
+
+.loader, .loader1, .loader2, .loader3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+svg {
+    transform: rotate(-90deg); /* Rotate the circle to start from the top */
+}
+
+.progress, .progress1, .progress2, .progress3 {
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.percentage {
+    position: absolute;
+    font-size: 18px; /* Adjust the font size as needed */
+    top: 40%; /* Center the percentage */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loader3 {
+    margin-top: 30px; /* Adjust this value to move the loader up */
+    margin-left: 100px;
+     /* Adjust this value to move the loader to the left */
+}
+.loader2 {
+    margin-top: 30px;
+    margin-right:-10px;
+    border-radius:25px;
+    
+     /* Adjust this value to move the loader up */
+     /* Adjust this value to move the loader to the left */
+}
+
+.loader2 p3 {
+    margin-top: 5px;
+    filter: none;
+    
+}
+
+.loader1 {
+    margin-top: 0px;
+    margin-left:200px;
+     /* Adjust this value to move the loader to the left */
+}
+
+.loader p1 {
+    margin-top: 5px;
+
+}
+.loader3 p4 {
+    margin-top:5px;
+}
+
+.loader1 p2 {
+    margin-top:5px;
+}
+
+.percentage {
+    filter: none; /* Ensure no blur is applied to these elements */
+}
+
+
+svg circle.progress {
+    filter: drop-shadow(0px 0px 10px rgba(18, 247, 255, 0.6)); /* Same color with rgba equivalent */
+    stroke: #12f7ff;    /* Keeps the stroke color */
+}
+
+svg circle.progress, 
+svg circle.progress1, 
+svg circle.progress2, 
+svg circle.progress3 {
+    filter: blur(1.3px);  /* Adjust the blur size to suit your needs */
+    stroke: #12f7ff;    /* Keeps the stroke color */
+    stroke-width: 10;
+}
+
+svg circle {
+    transform: translateZ(0); /* Fix for some browsers to prevent unexpected behavior */
+}
+
+.loader2 .progress2 .percentage {
+    animation: percentage 3s;
+}
+
+
+/*============================= project=========================*/
+
+.text-xs {
+    line-height: 1.5rem;
+}
+
+.project__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Adjust space between projects */
+}
+
+.project__item {
+    padding: 20px; /* Adds spacing inside each project block */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    background: var(--bg-color); /* Optional: Light background to separate projects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds depth */
+}
+
+
+.section__title {
+    margin-top:-1rem;
+    text-align:center;
+    font-size:35px;
+}
+
+.project__categories {
+    display: flex;
+    column-gap: 3rem;
+    margin-bottom: 1.875rem;
+    margin-top: 3rem;
+}
+
+.project__categories a1 {
+    color:var(--text-color);
+   
+    position: relative;
+    
+}
+.project__container.grid {
+    row-gap:2.5rem;
+}
+
+.project__categories a1:hover {
+    color: var(--hover-color);
+}
+
+.active {
+    color: var(--hover-color);
+}
+
+.active::after {
+    opacity: 1;
+}
+
+.project__item-grid {
+    grid-template-columns: 5fr 7fr;
+}
+
+.project__item {
+    display: flex;
+    flex-direction: row; /* Align items in a row (image and data beside each other) */
+    align-items: flex-start; /* Aligns content at the top */
+    width: 100%; /* Ensures it takes full width of the container */
+    gap: 20px; /* Adds space between image and text */
+}
+
+.title-pg a {
+    color: white;
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.title-pg a:hover {
+    color: var(--hover-color); /* Changes color to blue when hovered */
+}
+
+
+.project__img {
+    width:23.9%;
+    height:250px;
+    object-fit: cover;
+    
+}
+.project__img1 {
+    width:27.3%;
+    height:248px;
+    margin-top: 5px;
+    object-fit: cover;
+    
+}
+
+.project__img2 {
+    width:27.3%;
+    height:242px;
+    margin-top: 5px;
+    object-fit: cover;
+    
+}
+
+.project__img3 {
+    width:24%;
+    height:250px;
+    margin-top: 5px;
+    object-fit: cover;
+    
+}
+
+.project__data { 
+    border-bottom: 0.12rem solid var(--secon-bg-color);
+    border-top: 0.12rem solid var(--secon-bg-color);
+    border-right: 0.12rem solid var(--secon-bg-color);
+    border-left: 0.12rem solid var(--second-bg-color); /* Optional if you want no left border */
+    box-shadow: 0 4px 6px rgba(41, 46, 51, 0.5), /* Bottom shadow */
+            0 -4px 6px rgba(41, 46, 51, 0.5), /* Top shadow */
+            4px 0 6px rgba(41, 46, 51, 0.5),
+            4px 0 6px rgba(37, 8, 33, 3.2);
+    width: 85%;
+    margin-top:0.1rem;
+    margin-bottom:-4rem;
+    border-radius:16px;
+   
+               
+    
+    
+     /* Adjusts the width of the project data */
+}
+.project__data {
+    padding-left: 0.6rem; /* Adjust as needed */
+}
+
+
+
+.project__data::after {
+    content: '';
+    position: absolute;
+    bottom:0;
+    right: -0.5rem;
+    width: 7px;
+    height:2px;
+    background-color:var(--hover-color);
+
+}
+
+.project__title, .project__description, .project__stack, .tags {
+    margin: 10px 0; /* Adds some spacing between elements */
+}
+
+.tags {
+    list-style: none;
+    padding: 0;
+}
+
+.tags li {
+    display: inline-block;
+    background-color: var(--bg-color); /* Example tag background */
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.project__categories a1 {
+    text-decoration: none;
+    color: #fff; /* Default black color for all categories */
+    padding: 5px 10px;
+}
+
+.project__categories a1.active {
+    color: #12f7ff; /* Active category turns blue */
+    font-weight: bold; /* Optional: Make it bold when active */
+}
+
+.project__categories li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.project__data h2 {
+    font-weight:470;
+}
+.project__data p {
+    line-height:1.7;
+   
+    color:#bdbdbd;
+}
+.project__data h4 {
+    margin-top:15px;
+    font-weight:570;
+}
+
+.project__data ul {
+    margin-top:-6px;
+    color:#bdbdbd;
+    margin-left: 80px;
+    
+}
+
+.category__btn {
+    margin-left:70px;
+    background-color: var(--bg-color);
+    color:#bdbdbd;
+    padding: 3px 10px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes morph{
+    0%,
+    100%{
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    30%{
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+
+    60%{
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+
+    80%{
+        border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    }
+}
+
+@keyframes aboutSpinner {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes Programming{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 80%;
+    }
+}
+
+@keyframes Databases{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 73%;
+    }
+}
+
+@keyframes Machine{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 65%;
+    }
+}
+
+@keyframes Data{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 60%;
+    }
+}
+
+@keyframes Statistical{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+@keyframes glow{
+    0%{
+        background: var(--bg-color);
+        box-shadow: none;
+    }
+    100%{
+        background: var(--hover-color);
+        box-shadow: var(--neon-box-shadow);
+    }
+}
+
+
+
+@media(max-width: 991px) {
+    header,
+    header.sticky{
+        padding: 15px 5%;
+    }
+    footer {
+        padding: 15px 5%;
+    }
+    section {
+        padding: 50px 10%;
+    }
+    .navlist s{
+        padding: 8px 15px;
+    }
+    :root {
+        --big-font:2.2rem;
+        --normal-font:1.8rem;
+        --neon-box-shadow:0 0 .8rem #12f7ff;
+        --h2-font:3rem;
+    }
+    .home-content {
+        margin-top: 5rem;
+    }
+    .social-icons {
+        margin-top:7rem;
+    }
+
+    .home-image {
+        margin-bottom:1rem;
+    }
+    
+    
+}
+
+@media(max-width:768px) {
+    #menu-icon{
+        display: block;
+        transition: all .4s ease;
+    }
+
+    #menu-icon.bx-x{
+        transform:rotate(-180deg);
+    }
+    .navlist{
+        display:flex;
+        position:absolute;
+        top:-1000px;
+        right:0;
+        left:0;
+        flex-direction:column;
+        background:var(--bg-color);
+        text-align: left;
+        padding: 0 5%;
+        transition: all .45s ease;
+    }
+    .navlist a{
+        display: block;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .navlist.open {
+        top:100%;
+    }
+
+    .home{
+        grid-template-columns: 1fr;       
+    }
+    .about {
+        flex-direction: column-reverse;
+    }
+    .about .img-about {
+        margin-top: 5rem;
+    }
+
+    .education-box {
+        width: 225%; /* Set the width of the element to 80% */
+        
+    }
+
+    .about-content {
+        margin-left: 4rem;
+        width:97%;
+    }
+
+    .skill-main {
+        grid-template-columns: 1fr;
+    }
+    .skills {
+        width:105%;
+    }
+
+    .about {
+        width:105%;
+    }
+
+    .skill-right{
+        margin-top:2.5rem;
+    }
+
+    .skill-right .professional {
+        margin-right:-1.5rem;
+    }
+
+    .loader1 {
+        margin-right: 7rem;
+    }
+
+    .loader3 {
+        margin-right:7rem;
+    }
+
+    .skill-right h3 {
+        margin-left: -7.4rem;
+    }
+
+    .work {
+        text-align: center; /* Center the section title and categories */
+    }
+    
+    .project__categories {
+        display: flex; /* Use flexbox to center items */
+        justify-content: center; /* Center the category items */
+        margin-bottom: 20px; /* Add space below the categories */
+    }
+    
+    .project__categories ul {
+        list-style: none; /* Remove bullet points from the list */
+        padding: 0; /* Remove default padding */
+        display: flex;
+        margin-right:-6rem; /* Use flexbox for the list items */
+    }
+
+    .text-sm {
+        margin-right:-7rem;
+      
+    }
+    
+    .project__categories li {
+        margin: 0 15px; /* Add space between category items */
+    }
+    
+    .project__container {
+        display: flex; /* Use flexbox for the container */
+        justify-content: center; /* Center the items horizontally */
+    }
+    
+    .project__item {
+        display: flex;
+        flex-direction: column; /* Stack image and content vertically */
+        align-items: center;    /* Center image and text */
+        width: 100%;            /* Adjust width as needed */
+        max-width: 800px;       /* Limit the maximum width of the project item */
+        margin: 0 auto;         /* Center the project item */
+    }
+    
+    .project__img {
+        width: 60%;             /* Set image width (adjust as needed) */
+        margin-bottom: 30px;    /* Adds space below the image */
+    }
+    
+    .project__data {
+        text-align: left;       /* Left align the text content */
+        width: 120%; 
+        font-size: 14px;   
+        margin-top:-2rem; 
+        margin-bottom:2rem;       /* Ensure it takes full width */
+    }
+    
+    .project__data h2,
+    .project__data p,
+    .project__data h4 {
+        margin: 2px 5px;         /* Add spacing between lines */
+    }
+    
+    .tags {
+        display: flex;          /* Use flexbox for the tags */
+        gap: 10px;             /* Space between the buttons */
+        margin-top: 10px;      /* Add space above the tags */
+    }
+    
+    
+    
+ 
+    
+
+    
+    
+   
+}
+
